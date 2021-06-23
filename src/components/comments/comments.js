@@ -1,10 +1,10 @@
-import './comments.css'
+import './comments.css'                                           // TODO пропустив ";"
 import {useEffect, useState} from "react";
-import Comment from "./comment/comment";
+import Comment from "../comment/comment";
 
 export default function Comments(){
-
-    let[commentsList, setCommentsList] = useState([]);
+                                                                  // TODO зайвий пробіл
+    let[commentsList, setCommentsList] = useState([]);  // TODO оголошуй через const щоб не буол можливості змінювати стейт напряму
 
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/comments')

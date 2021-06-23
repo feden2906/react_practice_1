@@ -1,6 +1,6 @@
 import './comments.css'
 import {useEffect, useState} from "react";
-import Comment from "./Comment/comment";
+import Comment from "./comment/comment";
 
 export default function Comments(){
 
@@ -10,7 +10,6 @@ export default function Comments(){
         fetch('https://jsonplaceholder.typicode.com/comments')
             .then(value => value.json())
             .then(value => {
-                console.log(value);
                 setCommentsList(value);
             })
     }, [])
@@ -19,7 +18,7 @@ export default function Comments(){
         <div>
             <h1>Comments</h1>
             {
-                commentsList.map(value => <Comment items={value}/>)
+                commentsList.map(value => <Comment key={value.id} items={value}/>)
             }
         </div>
     )
